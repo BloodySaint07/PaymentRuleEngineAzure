@@ -19,6 +19,7 @@ public class PaymentDAOImpl implements PaymentDAO {
         payments.add(new Payment(counter.incrementAndGet(), "123456789", "987654321", new BigDecimal("100.00"), LocalDateTime.now(), "TRANSFER", new BigDecimal("2.00")));
         payments.add(new Payment(counter.incrementAndGet(), "111111111", "222222222", new BigDecimal("250.00"), LocalDateTime.now().minusDays(1), "DEPOSIT", new BigDecimal("10.00")));
         payments.add(new Payment(counter.incrementAndGet(), "333333333", "444444444", new BigDecimal("500.00"), LocalDateTime.now().minusDays(2), "WITHDRAWAL", new BigDecimal("0.00")));
+        payments.add(new Payment(counter.incrementAndGet(), "444444444", "6666666666", new BigDecimal("350.00"), LocalDateTime.now().minusDays(2), "WITHDRAWAL", new BigDecimal("0.00")));
     }
 
     @Override
