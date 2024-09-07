@@ -1,0 +1,21 @@
+import com.example.Payment.model.Payment;
+global com.example.Payment.model.PaymentResponse finalPayment;
+
+dialect "mvel"
+
+rule "Payment Type DEPOSIT discount"
+    when
+        Payment(paymentType == 'DEPOSIT')
+    then
+        System.out.println("========== Adding Discount Percentage for DEPOSIT =============");
+        finalPayment.setDiscount(finalPayment.getDiscount().pow(2));
+end
+
+rule "Payment Type TRANSFER discount"
+    when
+        Payment(paymentType == 'TRANSFER')
+    then
+        System.out.println("========== Adding Discount Percentage for TRANSFER =============");
+        finalPayment.setDiscount(finalPayment.getDiscount() +10);
+end
+
